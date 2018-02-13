@@ -1,0 +1,2 @@
+#php_value xdebug.profiler_output_dir /var/www/project/public
+#php_value xdebug.trace_output_dir /var/www/project/public
