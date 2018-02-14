@@ -74,6 +74,7 @@ Liste aller installierten PHP-Extensions
 * sqlite3
 * pgsql
 * libxml
+* [IonCube](https://www.ioncube.com/loaders.php)
 
 ## Contributing
 
