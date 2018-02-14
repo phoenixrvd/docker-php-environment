@@ -7,6 +7,8 @@ Eine Sammlung von Docker-Containern mit unterschiedlichen PHP-Versionen, gleiche
 
 
 - [Anleitung](#anleitung)
+  - [Start](#start)
+  - [APP-Domäne](#app-dom%C3%A4ne)
 - [Funktionsweise](#funktionsweise)
 - [PHP-Versionen](#php-versionen)
   - [Apache2-Module](#apache2-module)
@@ -18,11 +20,20 @@ Eine Sammlung von Docker-Containern mit unterschiedlichen PHP-Versionen, gleiche
 
 ## Anleitung
 
+### Start
 Einfach in Projekt-Verzeichnis ablegen und folgendes in Console ausführen.
  
 ```bash
 docker-compose up
 ```
+
+### APP-Domäne
+Damit die Webapp auf eine echte Domäne läuft, sollte man jeweilige Container-IP ([Apache2-Module](#Apache2-Module)) 
+in statische DNS-Tabelle auf eigenem Rechner eintragen.
+
+* [Linux](https://wiki.ubuntuusers.de/hosts/)
+* [Windows](http://www.thewindowsclub.com/hosts-file-in-windows)
+* [Mac](https://www.tippscout.de/hosts-datei-mac-os-x_tipp_5032.html)
 
 ## Funktionsweise
 
@@ -40,12 +51,12 @@ bleibt somit eine Standard-Lösung.
 Alle PHP-Versionen sind offizielle [PHP-Docker-Container](https://docs.docker.com/samples/library/php/).
 
 ### Apache2-Module
-| PHP    | URL                                     |
-| ------ | --------------------------------------- |
-| 5.6.33 | [localhost:8056](http://localhost:8056) |
-| 7.0.27 | [localhost:8070](http://localhost:8070) |
-| 7.1.14 | [localhost:8071](http://localhost:8071) |
-| 7.2.2  | [localhost:8022](http://localhost:8022) |
+| PHP    | URL                                     | IP            |
+| ------ | --------------------------------------- | ------------- |
+| 5.6.33 | [localhost:8056](http://localhost:8056) | 10.100.110.56 |
+| 7.0.27 | [localhost:8070](http://localhost:8070) | 10.100.110.70 |
+| 7.1.14 | [localhost:8071](http://localhost:8071) | 10.100.110.71 |
+| 7.2.2  | [localhost:8022](http://localhost:8022) | 10.100.110.72 |
 
 ## Extensions
 
