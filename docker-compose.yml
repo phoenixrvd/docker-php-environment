@@ -1,7 +1,7 @@
 version: '3'
 services:
 
-  php56:
+  php56: &base
     build:
       context: Dockerfiles/php56
       dockerfile: Dockerfile
@@ -19,49 +19,31 @@ services:
         ipv4_address: 10.100.110.56
 
   php70:
+    <<: *base
     build:
       context: Dockerfiles/php70
-      dockerfile: Dockerfile
-    expose:
-      - "80"
     ports:
       - "8070:80"
-    volumes:
-      - .:/var/www/html
-    env_file:
-      - .env
     networks:
       php_env:
         ipv4_address: 10.100.110.70
 
   php71:
+    <<: *base
     build:
       context: Dockerfiles/php71
-      dockerfile: Dockerfile
-    expose:
-      - "80"
     ports:
       - "8071:80"
-    volumes:
-      - .:/var/www/html
-    env_file:
-      - .env
     networks:
         php_env:
           ipv4_address: 10.100.110.71
 
   php72:
+    <<: *base
     build:
       context: Dockerfiles/php72
-      dockerfile: Dockerfile
-    expose:
-      - "80"
     ports:
       - "8072:80"
-    volumes:
-      - .:/var/www/html
-    env_file:
-      - .env
     networks:
       php_env:
         ipv4_address: 10.100.110.72
