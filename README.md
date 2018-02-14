@@ -13,6 +13,7 @@ Eine Sammlung von Docker-Containern mit unterschiedlichen PHP-Versionen, gleiche
 - [PHP-Versionen](#php-versionen)
   - [Apache2-Module](#apache2-module)
 - [Extensions](#extensions)
+- [Debugging und Profiling](#debugging-und-profiling)
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
 
@@ -75,6 +76,16 @@ Liste aller installierten PHP-Extensions
 * pgsql
 * libxml
 * [IonCube](https://www.ioncube.com/loaders.php)
+
+## Debugging und Profiling
+
+Beim Starten eines Containers wird automatisch 'tmp' - Verzeichnis im Projekt-Root 
+angelegt. Das Verzeichnis muss **unbedingt** beschreibbar gemacht werden, weil 
+PHP da die cachegrid.* und trace.* Dateien mit www-data speichert.
+
+Xdebug ist im Standard bereits aktiviert und kann in 'Auto-Mode' ohne 
+besondere IDE- und Server-Einstellungen genutzt werden. Gute Artikel dazu findet man
+[[hier](https://confluence.jetbrains.com/display/PhpStorm/Zero-configuration+Web+Application+Debugging+with+Xdebug+and+PhpStorm)]
 
 ## Contributing
 
