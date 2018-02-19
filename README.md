@@ -14,6 +14,7 @@ Eine Sammlung von Docker-Containern mit unterschiedlichen PHP-Versionen, gleiche
   - [Apache2-Module](#apache2-module)
 - [Extensions](#extensions)
 - [Debugging und Profiling](#debugging-und-profiling)
+- [Login in Container](#login-in-container)
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
 
@@ -86,6 +87,15 @@ PHP da die cachegrid.* und trace.* Dateien mit www-data speichert.
 Xdebug ist im Standard bereits aktiviert und kann in 'Auto-Mode' ohne 
 besondere IDE- und Server-Einstellungen genutzt werden. Gute Artikel dazu findet man
 [[hier](https://confluence.jetbrains.com/display/PhpStorm/Zero-configuration+Web+Application+Debugging+with+Xdebug+and+PhpStorm)]
+
+## Login ins Container
+
+```bash
+docker exec -it phpenv_php56_1 /bin/bash
+docker exec -it phpenv_php70_1 /bin/bash
+docker exec -it phpenv_php71_1 /bin/bash
+docker exec -it phpenv_php72_1 /bin/bash
+```
 
 ## Contributing
 
