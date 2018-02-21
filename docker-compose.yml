@@ -5,8 +5,6 @@ services:
     build:
       context: Dockerfiles/php56
       dockerfile: Dockerfile
-    expose:
-      - "80"
     ports:
       - "8056:80"
     volumes:
@@ -15,7 +13,7 @@ services:
     env_file:
       - .env
     networks:
-      php_env:
+      phpenv:
         ipv4_address: 10.100.110.56
 
   php70:
@@ -25,7 +23,7 @@ services:
     ports:
       - "8070:80"
     networks:
-      php_env:
+      phpenv:
         ipv4_address: 10.100.110.70
 
   php71:
@@ -35,7 +33,7 @@ services:
     ports:
       - "8071:80"
     networks:
-        php_env:
+        phpenv:
           ipv4_address: 10.100.110.71
 
   php72:
@@ -45,9 +43,24 @@ services:
     ports:
       - "8072:80"
     networks:
-      php_env:
+      phpenv:
         ipv4_address: 10.100.110.72
 
+  mysql57:
+    build:
+      context: Dockerfiles/mysql57
+      dockerfile: Dockerfile
+    volumes:
+      - ${DATABESES_BACKUP_PATH}:/opt/sql
+      - .:/opt/sql_restore
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+    env_file:
+      - .env
+    networks:
+      phpenv:
+        ipv4_address: 10.100.110.241
+
 networks:
-  php_env:
+  phpenv:
     driver: bridge
