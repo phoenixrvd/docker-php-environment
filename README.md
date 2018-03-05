@@ -87,6 +87,8 @@ Liste aller installierten PHP-Extensions
 * sqlite3
 * pgsql
 * libxml
+* soap
+* mysqli
 * [IonCube](https://www.ioncube.com/loaders.php)
 
 ### Debugging und Profiling
