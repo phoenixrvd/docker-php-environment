@@ -24,6 +24,7 @@ RUN tar -zxvf /usr/local/ioncube_loaders_lin_x86-64.tar.gz -C /usr/local/ \
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 RUN echo ServerName localhost >> /etc/apache2/conf-enabled/docker-php.conf
+RUN a2enmod rewrite
 
 # Install PHP-Settings
 COPY php.ini /usr/local/etc/php/
