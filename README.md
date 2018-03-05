@@ -69,7 +69,7 @@ Folgende Versionen sind als Apache2-Module installiert.
 | 5.6.33 | [localhost:8056](http://localhost:8056) | 10.100.110.56 |
 | 7.0.27 | [localhost:8070](http://localhost:8070) | 10.100.110.70 |
 | 7.1.14 | [localhost:8071](http://localhost:8071) | 10.100.110.71 |
-| 7.2.2  | [localhost:8022](http://localhost:8022) | 10.100.110.72 |
+| 7.2.2  | [localhost:8072](http://localhost:8072) | 10.100.110.72 |
 
 ### Extensions
 
