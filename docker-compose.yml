@@ -5,6 +5,8 @@ services:
     build:
       context: Dockerfiles/php56
       dockerfile: Dockerfile
+    expose:
+      - "80"
     ports:
       - "8056:80"
     volumes:
@@ -50,6 +52,8 @@ services:
     build:
       context: Dockerfiles/mysql57
       dockerfile: Dockerfile
+    expose:
+      - "3306"
     volumes:
       - ${DATABESES_BACKUP_PATH}:/opt/sql
       - .:/opt/sql_restore
