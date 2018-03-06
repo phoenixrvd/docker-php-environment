@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y \
 # Install PHP-Extensions
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
-    && docker-php-ext-install -j$(nproc) gd pdo pdo_pgsql pgsql iconv mysqli soap \
+    && docker-php-ext-install -j$(nproc) gd pdo pdo_pgsql pgsql iconv \
+        mysqli pdo_mysql soap zip \
     && pecl install mcrypt-1.0.1 xdebug-2.6.0 \
     && docker-php-ext-enable mcrypt xdebug
 
@@ -28,3 +29,4 @@ RUN a2enmod rewrite
 
 # Install PHP-Settings
 COPY php.ini /usr/local/etc/php/
+RUN chmod 777 /tmp

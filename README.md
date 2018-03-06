@@ -86,6 +86,8 @@ Liste aller installierten PHP-Extensions
 * mysqlnd
 * sqlite3
 * pgsql
+* mysql
+* zip
 * libxml
 * soap
 * mysqli
